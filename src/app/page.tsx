@@ -1,4 +1,5 @@
 import { fetchData } from './actions';
+import SearchForm from './components/SearchForm/SearchForm';
 
 export default async function Home() {
   const data = await fetchData();
@@ -7,6 +8,8 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen w-full flex flex-col gap-6 justify-center items-center">
+      <SearchForm />
+
       <span className="flex gap-1">
         <a href="/recipes" className="font-bold underline">
           click here
