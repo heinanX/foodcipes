@@ -21,13 +21,24 @@ const page = async ({ params }: { params: { id: string } }) => {
       {data.map((recipe: iRecipe, i: number) => (
         <section key={i}>
           <h2 className="pb-6 text-center">{recipe.recipeTitle}</h2>
+          <p
+            className={`text-center ${
+              recipe.difficultyLevel === 'medium'
+                ? 'text-yellow-400'
+                : recipe.difficultyLevel === 'low'
+                ? 'text-green-400'
+                : 'text-red-400'
+            }`}
+          >
+            Difficulty level: {recipe.difficultyLevel}
+          </p>
           <p className="italic text-center px-20">{recipe.description}</p>
 
           <article className="w-full flex justify-center bg-primary/50 py-2 mt-6">
             <div className="flex justify-between w-1/2">
-              <p>{recipe.preparationTime}</p>
-              <p>{recipe.cookingTime}</p>
-              <p>{recipe.difficultyLevel}</p>
+              <p>{recipe.servingSize} servings</p>
+              <p>prep: {recipe.preparationTime}</p>
+              <p>time: {recipe.cookingTime}</p>
             </div>
           </article>
 
@@ -40,7 +51,9 @@ const page = async ({ params }: { params: { id: string } }) => {
                       <li className="col-span-1">
                         {item.unit} {item.measurementunit}
                       </li>
-                      <li className="col-span-5">{item.ingredient}</li>
+                      <li className="col-span-5 capitalize">
+                        {item.ingredient}
+                      </li>
                     </ul>
                   ))}
                 </section>

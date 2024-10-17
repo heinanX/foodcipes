@@ -8,6 +8,12 @@
 - index filtering
 - accessability
 - add a /search page ?
+- add package for auto capitalization
+- general styling
+
+**Issues**
+
+- fix "//@ts-expect-error type mismatch", row 66, recipes/[id]/page
 
 **Init Thoughts About Pages:**
 / = holds different categories (carousels) and also a search form.
@@ -19,3 +25,8 @@ I have created the initial pages needed for the recipe collection.
 Where I left off is in the pages file for Home, where I am fetching the data from Sanity and storing it inside a variable. I haven't refined the fetch yet.
 
 **Next up:** work on fetching the correct data and how to present it.
+
+**Day 2: Individual data fetching.**
+I’m fetching the necessary data from the database for a single ID and am currently busy displaying the correct info on the individual page.
+
+**Next up:** Add stockphoto for recipe without image.
