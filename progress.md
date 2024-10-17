@@ -30,3 +30,8 @@ Where I left off is in the pages file for Home, where I am fetching the data fro
 I’m fetching the necessary data from the database for a single ID and am currently busy displaying the correct info on the individual page.
 
 **Next up:** Add stockphoto for recipe without image.
+
+**Day 2: Individual data fetching.**
+I'm successfully processing recipe image data and have added visuals to front page.
+
+**Next up:**
