@@ -21,47 +21,6 @@ export async function fetchData() {
   return data.allRecipes;
 }
 
-// export async function getRecipeByID(id: string) {
-//   const client = apolloClient();
-//   const { data } = await client.query({
-//     query: gql`
-//       query ($id: ID!) {
-//         allRecipes(_id: {$id}) {
-//           _id
-//           recipeTitle
-//           description
-//           servingSize
-// difficultyLevel
-// cuisine
-// dietaryInformation
-// language
-// recipeUrl
-// tried
-// set {
-//   title
-//   ingredients {
-//     ingredient
-//     unit
-//     measurmentunit
-//   }
-// }
-// preparationTime
-// cookingTime
-// images {
-//   asset {
-//     url
-//   }
-// }
-// tags {
-//   title
-// }
-//         }
-//       }
-//     `,
-//   });
-//   return data.allRecipes;
-// }
-
 export async function getRecipeByID(id: string) {
   console.log(id);
 

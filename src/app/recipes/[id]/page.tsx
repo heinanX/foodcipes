@@ -15,7 +15,6 @@ const myPortableTextComponents = {
 const page = async ({ params }: { params: { id: string } }) => {
   const paramsId = params.id.split('/').pop();
   const data = await getRecipeByID(paramsId as string);
-  console.log(data);
 
   return (
     <main className="min-h-screen justify-center items-center flex pt-20 max-w-7xl">
@@ -49,7 +48,6 @@ const page = async ({ params }: { params: { id: string } }) => {
             </article>
 
             <article className="w-full">
-              {/* <p className="italic">{recipe.difficultyLevel}</p> */}
               <PortableText
                 value={recipe.instructionsRaw}
                 //@ts-expect-error type mismatch
