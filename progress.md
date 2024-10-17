@@ -31,7 +31,7 @@ I’m fetching the necessary data from the database for a single ID and am curre
 
 **Next up:** Add stockphoto for recipe without image.
 
-**Day 2: Individual data fetching.**
-I'm successfully processing recipe image data and have added visuals to front page.
+**Day 2: Processing image data and visuals.**
+I'm successfully processing recipe image data and have added visuals to front page. I have decided to put it inside its own component for now, for easy use in the future and to minimize code.
 
-**Next up:**
+**Next up:** I need to render image on [id] page.
