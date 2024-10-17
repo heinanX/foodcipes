@@ -24,14 +24,22 @@ export interface iRecipe {
   instructionsRaw: never;
   preparationTime: string;
   cookingTime: string;
-  images: {
-    asset: {
-      url: string;
-    };
-  };
+  images: [
+    {
+      asset: {
+        url: string;
+      };
+    }
+  ];
   tags: [
     {
       title: string;
     }
   ];
+}
+
+export interface iImage {
+  asset: {
+    url: string;
+  };
 }

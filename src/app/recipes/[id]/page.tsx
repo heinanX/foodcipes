@@ -25,7 +25,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             className={`text-center ${
               recipe.difficultyLevel === 'medium'
                 ? 'text-yellow-400'
-                : recipe.difficultyLevel === 'low'
+                : recipe.difficultyLevel === 'easy'
                 ? 'text-green-400'
                 : 'text-red-400'
             }`}
