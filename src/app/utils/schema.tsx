@@ -12,13 +12,16 @@ export interface iRecipe {
   set: [
     {
       title: string;
-      ingredients: {
-        ingredient: string;
-        unit: string;
-        measurementunit: string;
-      };
+      ingredients: [
+        {
+          ingredient: string;
+          unit: string;
+          measurementunit: string;
+        }
+      ];
     }
   ];
+  instructionsRaw: never;
   preparationTime: string;
   cookingTime: string;
   images: {

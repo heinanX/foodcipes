@@ -1,5 +1,6 @@
 import { fetchData } from './actions';
 import SearchForm from './components/SearchForm/SearchForm';
+import { iRecipe } from './utils/schema';
 
 export default async function Home() {
   const data = await fetchData();
@@ -19,7 +20,7 @@ export default async function Home() {
 
       <h2 className="">Here are ten of my favorite recipes</h2>
       <article className="w-full flex flex-row gap-4 justify-center">
-        {data.map((item: any, i: number) => (
+        {data.map((item: iRecipe, i: number) => (
           <section
             key={i}
             className="flex justify-center items-center h-52 w-52 border border-primary"

@@ -88,6 +88,7 @@ export async function getRecipeByID(id: string) {
               measurementunit
             }
           }
+          instructionsRaw
           preparationTime
           cookingTime
           images {
