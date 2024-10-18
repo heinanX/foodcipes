@@ -27,7 +27,7 @@ Where I left off is in the pages file for Home, where I am fetching the data fro
 **Next up:** work on fetching the correct data and how to present it.
 
 **Day 2: Individual data fetching.**
-I’m fetching the necessary data from the database for a single ID and am currently busy displaying the correct info on the individual page.
+I'm fetching the necessary data from the database for a single ID and am currently busy displaying the correct info on the individual page.
 
 **Next up:** Add stockphoto for recipe without image.
 

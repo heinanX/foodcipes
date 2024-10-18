@@ -1,4 +1,5 @@
 import { getRecipeByID } from '@/app/actions';
+import RenderImage from '@/app/components/RenderImage';
 import { iRecipe } from '@/app/utils/schema';
 import { PortableText } from '@portabletext/react';
 
@@ -17,48 +18,56 @@ const page = async ({ params }: { params: { id: string } }) => {
   const data = await getRecipeByID(paramsId as string);
 
   return (
-    <main className="min-h-screen justify-center items-center flex pt-20 max-w-7xl">
+    <main className="min-h-screen justify-center items-center flex py-32 max-w-7xl w-full">
       {data.map((recipe: iRecipe, i: number) => (
-        <section key={i}>
-          <h2 className="pb-6 text-center">{recipe.recipeTitle}</h2>
-          <p
-            className={`text-center ${
-              recipe.difficultyLevel === 'medium'
-                ? 'text-yellow-400'
-                : recipe.difficultyLevel === 'easy'
-                ? 'text-green-400'
-                : 'text-red-400'
-            }`}
-          >
-            Difficulty level: {recipe.difficultyLevel}
-          </p>
-          <p className="italic text-center px-20">{recipe.description}</p>
+        <article key={i}>
+          <section className="flex flex-col items-center space-y-4">
+            <h2 className="text-center">{recipe.recipeTitle}</h2>
+            <div className="w-96 h-96 relative">
+              <RenderImage
+                image={recipe.images}
+                recipeTitle={recipe.recipeTitle}
+              />
+            </div>
+            <p className="italic text-center px-20 max-w-[750px]">
+              {recipe.description}
+            </p>
+          </section>
 
-          <article className="w-full flex justify-center bg-primary/50 py-2 mt-6">
-            <div className="flex justify-between w-1/2">
+          <section className="w-full flex justify-center bg-primary/50 py-2 mt-6">
+            <div className="flex justify-between items-center w-1/2">
               <p>{recipe.servingSize} servings</p>
               <p>prep: {recipe.preparationTime}</p>
               <p>time: {recipe.cookingTime}</p>
+              <p
+                className={`text-sm ${
+                  recipe.difficultyLevel === 'medium'
+                    ? 'text-custYellow'
+                    : recipe.difficultyLevel === 'easy'
+                    ? 'text-custGreen'
+                    : 'text-red-400'
+                }`}
+              >
+                {recipe.difficultyLevel}
+              </p>
             </div>
-          </article>
+          </section>
 
-          <div className="grid grid-cols-2 p-10">
-            <article className="w-full">
+          <section className="grid grid-cols-2 p-10">
+            <div className="w-full">
               {recipe.set.map((item, i) => (
                 <section key={i}>
                   {item.ingredients.map((item, i) => (
-                    <ul key={i} className="grid grid-cols-6">
-                      <li className="col-span-1">
+                    <ul key={i} className="grid grid-cols-2">
+                      <li className="w-20">
                         {item.unit} {item.measurementunit}
                       </li>
-                      <li className="col-span-5 capitalize">
-                        {item.ingredient}
-                      </li>
+                      <li className="capitalize">{item.ingredient}</li>
                     </ul>
                   ))}
                 </section>
               ))}
-            </article>
+            </div>
 
             <article className="w-full">
               <PortableText
@@ -67,8 +76,8 @@ const page = async ({ params }: { params: { id: string } }) => {
                 components={myPortableTextComponents}
               />
             </article>
-          </div>
-        </section>
+          </section>
+        </article>
       ))}
     </main>
   );
