@@ -31,7 +31,12 @@ I'm fetching the necessary data from the database for a single ID and am current
 
 **Next up:** Add stockphoto for recipe without image.
 
-**Day 2: Processing image data and visuals.**
+**Day 3: Processing image data and visuals.**
 I'm successfully processing recipe image data and have added visuals to front page. I have decided to put it inside its own component for now, for easy use in the future and to minimize code.
 
 **Next up:** I need to render image on [id] page.
+
+**Day 4: Processing image data and visuals.**
+Head and neck is killing me so did some cleanup, fixed the overflow issue with header and added component to render image to [id] page.
+
+**Next up:** I need to fix the grid-col issue in the ingredients section as there is too much space between units and ingredient.
