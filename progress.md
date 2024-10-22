@@ -16,6 +16,7 @@
 
 - fix "//@ts-expect-error type mismatch", row 66, recipes/[id]/page
 - revalidate data fetching inside actions.tsx
+- remove outline when recipeNavBtns are clicked with mouse?
 
 **Init Thoughts About Pages:**
 / = holds different categories (carousels) and also a search form.

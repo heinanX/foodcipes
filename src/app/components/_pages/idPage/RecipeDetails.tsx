@@ -1,4 +1,4 @@
-import { iRecipe } from '../utils/interfaces';
+import { iRecipe } from '../../../utils/interfaces';
 import DifficultyLabel from './DifficultyLabel';
 import { RxStopwatch } from 'react-icons/rx';
 import { PiKnifeFill, PiClock } from 'react-icons/pi';

@@ -1,10 +1,10 @@
 import { getRecipeByID } from '@/app/actions';
-import RenderImage from '@/app/components/RenderImage';
-import IngredientList from '@/app/components/IngredientList';
 import { iRecipe } from '@/app/utils/interfaces';
 import { PortableText } from '@portabletext/react';
-import RecipeDetails from '@/app/components/RecipeDetails';
-import RecipeNavBtns from '@/app/components/RecipeNavBtns';
+import RenderImage from '@/app/components/RenderImage';
+import RecipeDetails from '@/app/components/_pages/idPage/RecipeDetails';
+import RecipeNavBtns from '@/app/components/_pages/idPage/RecipeNavBtns';
+import IngredientList from '@/app/components/_pages/idPage/IngredientList';
 
 const myPortableTextComponents = {
   listItem: {
