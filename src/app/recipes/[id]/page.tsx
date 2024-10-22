@@ -45,8 +45,6 @@ const page = async ({ params }: { params: { id: string } }) => {
             </article>
           </div>
 
-          {/* <div className="w-full  bg-primary/50 p-2 my-2"></div> */}
-
           <section
             id="recipe"
             className="grid grid-cols-1 md:grid-cols-2 py-10 md:px-10 w-full md:max-w-5xl"

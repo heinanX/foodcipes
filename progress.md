@@ -49,4 +49,4 @@ Did some remodeling and added elements for additional recipe properties. Introdu
 
 Made the [id] page fully responsive.
 
-**Next up:**
+**Next up:** leave [id] page for now and focus on fetching recipes under a specific tag.
