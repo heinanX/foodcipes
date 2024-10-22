@@ -10,6 +10,7 @@
 - add a /search page ?
 - add package for auto capitalization
 - general styling
+- add url to referred recipe [id] page
 
 **Issues**
 
@@ -42,11 +43,11 @@ Head and neck is killing me so did some cleanup, fixed the overflow issue with h
 
 **Next up:** I need to fix the grid-col issue in the ingredients section as there is too much space between units and ingredient.
 
-**Day 4: Bugs and data structure.**
+**Day 5: Bugs and data structure.**
 Took care of some bugs, like width property on header to fix overflow issue. I also refactored data rendering for better structure and accessibility by changing the map to render a single <ul> with multiple items instead of multiple <ul> elements.
 
 Did some remodeling and added elements for additional recipe properties. Introduced RecipeNavBtns for quick access to the recipe and added focus styling for improved accessibility.
 
 Made the [id] page fully responsive.
 
-**Next up:** leave [id] page for now and focus on fetching recipes under a specific tag.
+**Next up:** leave [id] page for now and focus on fetching recipes under a specific tag. (I need to add link to original recipe.)
