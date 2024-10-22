@@ -43,3 +43,14 @@ export interface iImage {
     url: string;
   };
 }
+
+export interface iSet {
+  title: string;
+  ingredients: [
+    {
+      ingredient: string;
+      unit: string;
+      measurementunit: string;
+    }
+  ];
+}

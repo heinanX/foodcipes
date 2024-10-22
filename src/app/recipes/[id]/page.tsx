@@ -1,12 +1,18 @@
 import { getRecipeByID } from '@/app/actions';
 import RenderImage from '@/app/components/RenderImage';
-import { iRecipe } from '@/app/utils/schema';
+import IngredientList from '@/app/components/IngredientList';
+import { iRecipe } from '@/app/utils/interfaces';
 import { PortableText } from '@portabletext/react';
+import RecipeDetails from '@/app/components/RecipeDetails';
+import RecipeNavBtns from '@/app/components/RecipeNavBtns';
 
 const myPortableTextComponents = {
   listItem: {
     number: ({ children }: { children: React.ReactNode }) => (
-      <li className="mb-2" style={{ listStyleType: 'number' }}>
+      <li
+        className="mb-2 md:border-primary/30 md:border-b-2 pb-3 pt-1 first:pt-0 last:border-none"
+        style={{ listStyleType: 'number' }}
+      >
         {children}
       </li>
     ),
@@ -20,56 +26,39 @@ const page = async ({ params }: { params: { id: string } }) => {
   return (
     <main className="min-h-screen justify-center items-center flex py-32 max-w-7xl w-full">
       {data.map((recipe: iRecipe, i: number) => (
-        <article key={i}>
+        <article key={i} className="flex flex-col items-center w-full">
           <section className="flex flex-col items-center space-y-4">
             <h2 className="text-center">{recipe.recipeTitle}</h2>
-            <div className="w-96 h-96 relative">
+            <div className="w-80 h-80 md:w-96 md:h-96 relative">
               <RenderImage
                 image={recipe.images}
                 recipeTitle={recipe.recipeTitle}
               />
             </div>
-            <p className="italic text-center px-20 max-w-[750px]">
-              {recipe.description}
-            </p>
           </section>
 
-          <section className="w-full flex justify-center bg-primary/50 py-2 mt-6">
-            <div className="flex justify-between items-center w-1/2">
-              <p>{recipe.servingSize} servings</p>
-              <p>prep: {recipe.preparationTime}</p>
-              <p>time: {recipe.cookingTime}</p>
-              <p
-                className={`text-sm ${
-                  recipe.difficultyLevel === 'medium'
-                    ? 'text-custYellow'
-                    : recipe.difficultyLevel === 'easy'
-                    ? 'text-custGreen'
-                    : 'text-red-400'
-                }`}
-              >
-                {recipe.difficultyLevel}
+          <RecipeNavBtns />
+
+          <div className="w-full bg-primary/30 flex justify-center">
+            <article className="md:max-w-3xl flex w-full md:flex-row py-6 px-2 flex-col-reverse">
+              <RecipeDetails recipe={recipe} />
+            </article>
+          </div>
+
+          {/* <div className="w-full  bg-primary/50 p-2 my-2"></div> */}
+
+          <section
+            id="recipe"
+            className="grid grid-cols-1 md:grid-cols-2 py-10 md:px-10 w-full md:max-w-5xl"
+          >
+            <article className="w-full pl-6 md:pl-0 pb-10 md:w-11/12 md:border-r-2 md:border-primary/20 pr-4">
+              <IngredientList set={recipe.set} />
+            </article>
+
+            <article className="w-full px-8 py-10 md:py-0 md:px-2 bg-primary/30 md:bg-transparent">
+              <p className="uppercase tracking-wider border-primary/30 border-b-2 pb-3 mb-3">
+                instructions:
               </p>
-            </div>
-          </section>
-
-          <section className="grid grid-cols-2 p-10">
-            <div className="w-full">
-              {recipe.set.map((item, i) => (
-                <section key={i}>
-                  {item.ingredients.map((item, i) => (
-                    <ul key={i} className="grid grid-cols-2">
-                      <li className="w-20">
-                        {item.unit} {item.measurementunit}
-                      </li>
-                      <li className="capitalize">{item.ingredient}</li>
-                    </ul>
-                  ))}
-                </section>
-              ))}
-            </div>
-
-            <article className="w-full">
               <PortableText
                 value={recipe.instructionsRaw}
                 //@ts-expect-error type mismatch

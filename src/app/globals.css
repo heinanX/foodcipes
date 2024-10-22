@@ -4,12 +4,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #333333;
+  --foreground: #3b2f2f;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #333333;
+    /* --background: #333333; */
+    --background: #3b2f2f;
     --foreground: #ededed;
   }
 }
@@ -21,14 +22,24 @@ body {
 }
 
 h2 {
-  @apply text-3xl; /* Replace 'text-2xl' with your desired Tailwind size */
+  @apply text-3xl;
 }
 
 h4 {
-  @apply text-xl; /* Replace 'text-2xl' with your desired Tailwind size */
+  @apply text-xl;
+}
+h5 {
+  @apply text-lg font-medium tracking-wider;
 }
 li {
-  @apply list-none /* Replace 'text-2xl' with your desired Tailwind size */;
+  @apply list-none;
+}
+button {
+  @apply px-2 py-1 rounded-md;
+}
+
+.primaryBorder {
+  @apply border-b-[1px] border-primary/50;
 }
 
 @layer utilities {

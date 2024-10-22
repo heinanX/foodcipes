@@ -9,15 +9,17 @@ const RenderImage = ({
 }) => {
   return (
     <>
-      {image.map((item: { asset: { url: string } }, i: number) => (
-        <Image
-          key={i}
-          src={item.asset.url}
-          alt={`A visual photo of ${recipeTitle}`}
-          fill={true}
-          className="object-cover overflow-hidden"
-        />
-      ))}
+      {image
+        ? image.map((item: { asset: { url: string } }, i: number) => (
+            <Image
+              key={i}
+              src={item.asset.url}
+              alt={`A visual photo of ${recipeTitle}`}
+              fill={true}
+              className="object-cover overflow-hidden"
+            />
+          ))
+        : ''}
     </>
   );
 };
