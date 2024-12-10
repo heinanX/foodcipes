@@ -1,10 +1,10 @@
-import { fetchData } from './actions';
+import { getAllRecipes } from './actions';
 import RenderImage from './components/RenderImage';
 import SearchForm from './components/SearchForm/SearchForm';
 import { iRecipe } from './utils/interfaces';
 
 export default async function Home() {
-  const data = await fetchData();
+  const data = await getAllRecipes();
 
   // console.log(data);
 

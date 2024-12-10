@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import apolloClient from './apolloClient';
+const client = apolloClient();
 
-export async function fetchData() {
-  const client = apolloClient();
+export async function getAllRecipes() {
   const { data } = await client.query({
     query: gql`
       query {
@@ -23,8 +23,6 @@ export async function fetchData() {
 
 export async function getRecipeByID(id: string) {
   console.log(id);
-
-  const client = apolloClient();
   const { data } = await client.query({
     query: gql`
       query ($id: ID!) {
