@@ -52,3 +52,9 @@ Did some remodeling and added elements for additional recipe properties. Introdu
 Made the [id] page fully responsive.
 
 **Next up:** leave [id] page for now and focus on fetching recipes under a specific tag. (I need to add link to original recipe.)
+
+**Day 6: Error fetching data client side**
+
+3 hours in and I'm still trying to figure out why I cant fetch data from client side. It works in my server components but not my client. I get it has something to do with me executing the function from serverside, but there is no info on how to make it available for client side...
+
+**Next up:** work it out somehow

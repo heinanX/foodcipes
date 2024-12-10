@@ -1,4 +1,4 @@
-import { iSet } from '../utils/interfaces';
+import { iSet } from '@/app/utils/interfaces';
 
 const IngredientList = ({ set }: { set: iSet[] }) => {
   return (

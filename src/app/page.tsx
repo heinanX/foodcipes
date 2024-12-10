@@ -5,8 +5,9 @@ import { iRecipe } from './utils/interfaces';
 
 export default async function Home() {
   const data = await fetchData();
-
   // console.log(data);
+  // const data2 = await getAllRecipeTags();
+  // // console.log(data);
 
   return (
     <main className="min-h-screen w-full flex flex-col gap-6 justify-center items-center">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from './components/Header/Header';
-
+import { ApolloWrapper } from './apollo-wrapper';
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} w-full min-h-screen antialiased flex flex-col justify-center items-center relative`}
       >
         <Header />
-        {children}
+        <ApolloWrapper>{children}</ApolloWrapper>
       </body>
     </html>
   );

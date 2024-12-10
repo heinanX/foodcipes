@@ -1,8 +1,11 @@
 import { gql } from '@apollo/client';
 import apolloClient from './apolloClient';
+import { revalidatePath } from 'next/cache';
+
+const client = apolloClient();
 
 export async function fetchData() {
-  const client = apolloClient();
+  revalidatePath('/');
   const { data } = await client.query({
     query: gql`
       query {
@@ -23,8 +26,6 @@ export async function fetchData() {
 
 export async function getRecipeByID(id: string) {
   console.log(id);
-
-  const client = apolloClient();
   const { data } = await client.query({
     query: gql`
       query ($id: ID!) {
@@ -65,3 +66,31 @@ export async function getRecipeByID(id: string) {
   });
   return data.allRecipes;
 }
+
+const GET_ALL_RECIPES = gql`
+  query {
+    allRecipes {
+      _id
+      recipeTitle
+      tags {
+        title
+      }
+    }
+  }
+`;
+
+export const getAllRecipeTags = async () => {
+  console.log('i get to here');
+
+  const { data } = await client.query({
+    query: GET_ALL_RECIPES,
+  });
+  console.log(data);
+  //return data.allRecipes;
+
+  console.log(
+    await client.query({
+      query: GET_ALL_RECIPES,
+    })
+  );
+};

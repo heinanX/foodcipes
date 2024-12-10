@@ -35,7 +35,7 @@ const page = () => {
         <a href="/" className="font-bold underline">
           click here
         </a>
-        <p> to go to recipe index</p>
+        <p> to go to home</p>
       </span>
     </div>
   );
