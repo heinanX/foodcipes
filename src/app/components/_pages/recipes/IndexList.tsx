@@ -1,9 +1,8 @@
 import { getAllRecipes } from '@/app/actions';
 import RecipeCard from '../../RecipeCard';
-import { iRecipeCard } from '@/app/utils/interfaces';
 
 const IndexList = async ({ query }: { query: string }) => {
-  const recipes: iRecipeCard[] = await getAllRecipes();
+  const recipes = await getAllRecipes();
 
   const filteredReecipes = Array.isArray(recipes)
     ? recipes.filter((recipe) => {
