@@ -52,3 +52,10 @@ Did some remodeling and added elements for additional recipe properties. Introdu
 Made the [id] page fully responsive.
 
 **Next up:** leave [id] page for now and focus on fetching recipes under a specific tag. (I need to add link to original recipe.)
+
+**Day 6: Error fetching data client side.**
+
+Struggled with fetching data based on a search function. I wanted it to be handled inside a server component but had to use a client component for the search fields. After spending a few hours troubleshooting and learning how to use Apollo Client on the client side, I watched a very helpful video and learned how to handle it server-side.
+
+**Day 7: Recipe Index**
+Renamed my Index component from indexResults to indexList. It made more sense since it's more of a list than a result of something. I'm not overly fond of fetching every recipe document when I never need them all at the same time, but given that this is a small-scale app meant just for me, I decided not to overcomplicate things. I've limited the data I fetch from each document, which already improves performance and reduces data transfer.

@@ -28,6 +28,3 @@ const IndexList = async ({ query }: { query: string }) => {
 };
 
 export default IndexList;
-
-//youre here and your about to filter the results after what the params says. ok.
-//so what we need to add is a 'no recipes' if there are no recipes on a letter, I also need to write the filter function
