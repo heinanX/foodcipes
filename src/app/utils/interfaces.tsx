@@ -1,3 +1,15 @@
+export interface iRecipeCard {
+  _id: string;
+  recipeTitle: string;
+  images: [
+    {
+      asset: {
+        url: string;
+      };
+    }
+  ];
+}
+
 export interface iRecipe {
   _id: string;
   recipeTitle: string;

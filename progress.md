@@ -52,3 +52,15 @@ Did some remodeling and added elements for additional recipe properties. Introdu
 Made the [id] page fully responsive.
 
 **Next up:** leave [id] page for now and focus on fetching recipes under a specific tag. (I need to add link to original recipe.)
+
+**Day 6: Error fetching data client side.**
+
+Struggled with fetching data based on a search function. I wanted it to be handled inside a server component but had to use a client component for the search fields. After spending a few hours troubleshooting and learning how to use Apollo Client on the client side, I watched a very helpful video and learned how to handle it server-side.
+
+**Day 7: Recipe Index**
+Renamed my Index component from indexResults to indexList. It made more sense since it's more of a list than a result of something. I'm not overly fond of fetching every recipe document when I never need them all at the same time, but given that this is a small-scale app meant just for me, I decided not to overcomplicate things. I've limited the data I fetch from each document, which already improves performance and reduces data transfer.
+
+**Day 8: Cleanup, active state, setup for seachForm**
+Did some cleaning up in the files, fixed spelling errors, and added an active state for the active letter on the index page. Set up documents for SearchForm and copied functionality from NavIndex to SearchRecipe, making minor edits.
+
+**Next up:** I need to fix the RecipeCards. The image rendering is set to 52x52, which I don't want on screen or tablet mode. I might also work on the start page and fix the SearchForm inside the header, but I can't decide where to put it yet.
