@@ -59,3 +59,8 @@ Struggled with fetching data based on a search function. I wanted it to be handl
 
 **Day 7: Recipe Index**
 Renamed my Index component from indexResults to indexList. It made more sense since it's more of a list than a result of something. I'm not overly fond of fetching every recipe document when I never need them all at the same time, but given that this is a small-scale app meant just for me, I decided not to overcomplicate things. I've limited the data I fetch from each document, which already improves performance and reduces data transfer.
+
+**Day 8: Cleanup, active state, setup for seachForm**
+Did some cleaning up in the files, fixed spelling errors, and added an active state for the active letter on the index page. Set up documents for SearchForm and copied functionality from NavIndex to SearchRecipe, making minor edits.
+
+**Next up:** I need to fix the RecipeCards. The image rendering is set to 52x52, which I don't want on screen or tablet mode. I might also work on the start page and fix the SearchForm inside the header, but I can't decide where to put it yet.
