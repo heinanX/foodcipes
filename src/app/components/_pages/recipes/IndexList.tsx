@@ -4,7 +4,7 @@ import RecipeCard from '../../RecipeCard';
 const IndexList = async ({ query }: { query: string }) => {
   const recipes = await getAllRecipes();
 
-  const filteredReecipes = Array.isArray(recipes)
+  const filteredRecipes = Array.isArray(recipes)
     ? recipes.filter((recipe) => {
         return recipe.recipeTitle.toLowerCase().startsWith(query.toLowerCase());
       })
@@ -12,15 +12,13 @@ const IndexList = async ({ query }: { query: string }) => {
 
   return (
     <div className="w-full flex flex-wrap gap-10">
-      {Array.isArray(recipes) && filteredReecipes.length === 0 && (
+      {Array.isArray(recipes) && filteredRecipes.length === 0 && (
         <p>No recipes found</p>
       )}
 
       {Array.isArray(recipes) &&
-        filteredReecipes.map((recipeCard) => (
-          <div key={recipeCard._id} className="flex">
-            <RecipeCard recipe={recipeCard} />
-          </div>
+        filteredRecipes.map((recipeCard) => (
+          <RecipeCard key={recipeCard._id} recipe={recipeCard} />
         ))}
     </div>
   );

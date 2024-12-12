@@ -3,7 +3,7 @@ import RenderImage from './RenderImage';
 
 const RecipeCard = ({ recipe }: { recipe: iRecipeCard }) => {
   return (
-    <a key={recipe._id} href={`/recipes/${recipe._id}`} className="">
+    <a href={`/recipes/${recipe._id}`}>
       <section className="relative h-52 w-52">
         <RenderImage image={recipe.images} recipeTitle={recipe.recipeTitle} />
         <div className="relative z-10 flex items-center w-full h-full bg-black/0 hover:bg-black/50">
