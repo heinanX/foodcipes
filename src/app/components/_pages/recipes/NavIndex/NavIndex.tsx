@@ -1,6 +1,7 @@
 'use client';
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 // prettier-ignore
 const alphabet = [
@@ -13,11 +14,14 @@ const NavIndex = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
+  const activeQueryLetter = searchParams.toString().slice(-1);
+  const [active, setActive] = useState(activeQueryLetter);
+
   const handleFiltering = (letter: string) => {
     const params = new URLSearchParams(searchParams);
     params.set('query', letter);
-    console.log('params  ', params.toString());
     replace(`${pathname}?${params.toString()}`);
+    setActive(letter);
   };
 
   return (
@@ -26,9 +30,14 @@ const NavIndex = () => {
         <li
           key={i}
           aria-label={`Filter by ${item}`}
-          className="h-6 w-6 flex items-center justify-center hover:border border-white lg:text-2xl"
+          className={`h-6 w-6 flex items-center justify-center lg:text-2xl ${
+            active === item.toUpperCase() ? 'text-custYellow underline' : ''
+          }
+            }`}
         >
           <button
+            className="uppercase"
+            aria-current={active === item.toUpperCase() ? 'true' : undefined}
             onClick={(e) =>
               handleFiltering((e.target as HTMLButtonElement).innerText)
             }
