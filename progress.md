@@ -64,3 +64,6 @@ Renamed my Index component from indexResults to indexList. It made more sense si
 Did some cleaning up in the files, fixed spelling errors, and added an active state for the active letter on the index page. Set up documents for SearchForm and copied functionality from NavIndex to SearchRecipe, making minor edits.
 
 **Next up:** I need to fix the RecipeCards. The image rendering is set to 52x52, which I don't want on screen or tablet mode. I might also work on the start page and fix the SearchForm inside the header, but I can't decide where to put it yet.
+
+**Day 8: mobile header**
+I fixed the image size of the recipe cards, and I started on the mobile header. I dont know if I want to link to the search page in the header or if I want to have the search bar for easy and quick use..
