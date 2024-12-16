@@ -1,7 +1,7 @@
 import { getRecipeByID } from '@/app/actions';
 import { iRecipe } from '@/app/utils/interfaces';
 import { PortableText } from '@portabletext/react';
-import RenderImage from '@/app/components/RenderImage';
+import RenderImage from '@/app/components/RecipeCard/RenderImage';
 import RecipeDetails from '@/app/components/_pages/idPage/RecipeDetails';
 import RecipeNavBtns from '@/app/components/_pages/idPage/RecipeNavBtns';
 import IngredientList from '@/app/components/_pages/idPage/IngredientList';

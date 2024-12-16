@@ -1,11 +1,12 @@
 import NavBar from '../NavBar/NavBar';
+import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="hidden sm:flex absolute top-0 left-0 w-full py-6 px-10 2xl:px-24 bg-primary justify-between  text-rose-ebony">
-      <a href="/" className="font-bold uppercase tracking-widest text-xl">
+    <header className="hidden sm:flex absolute top-0 left-0 w-full py-6 px-10 sm:px-24 bg-primary justify-between  text-rose-ebony">
+      <Link href="/" className="font-bold uppercase tracking-widest text-xl">
         foodcipes
-      </a>
+      </Link>
       <NavBar />
     </header>
   );

@@ -4,6 +4,7 @@
 
 - search form
 - carousel
+- carousel card: div split in two cols, one large image, title description in other and call to action button
 - accessability
 - add a /search page ?
 - add package for auto capitalization

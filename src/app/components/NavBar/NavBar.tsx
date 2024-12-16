@@ -1,18 +1,26 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FaBook, FaMagnifyingGlass } from 'react-icons/fa6';
+import { FaHome } from 'react-icons/fa';
 
 const navLinks = [
   {
     title: 'Home',
+    sr: 'Home',
+    icon: <FaHome />,
     url: '/',
   },
   {
-    title: 'Recipe Index',
+    title: 'Index',
+    sr: 'Recipe Index',
+    icon: <FaBook />,
     url: '/recipes',
   },
   {
-    title: 'Search Recipe',
+    title: 'Search',
+    sr: 'Search Recipe',
+    icon: <FaMagnifyingGlass />,
     url: '/search',
   },
 ];
@@ -22,7 +30,7 @@ const NavBar = () => {
 
   return (
     <nav>
-      <ul className=" flex flex-col sm:flex-row gap-x-4 font-semibold tracking-wide">
+      <ul className=" flex flex-col sm:flex-row gap-x-8 font-semibold tracking-wide">
         {navLinks.map((link, i) =>
           pathname === link.url ? (
             <></>
@@ -34,9 +42,12 @@ const NavBar = () => {
               <Link
                 href={link.url}
                 prefetch
-                className={pathname === link.url ? 'underline' : ''}
+                aria-label={`Go to ${link.sr}`}
+                className={`flex items-center gap-1 ${
+                  pathname === link.url ? 'underline' : ''
+                }`}
               >
-                {link.title}
+                {link.icon} {link.title}
               </Link>
             </li>
           )

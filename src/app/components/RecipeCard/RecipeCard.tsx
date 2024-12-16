@@ -1,4 +1,4 @@
-import { iRecipeCard } from '../utils/interfaces';
+import { iRecipeCard } from '../../utils/interfaces';
 import RenderImage from './RenderImage';
 
 const RecipeCard = ({ recipe }: { recipe: iRecipeCard }) => {
