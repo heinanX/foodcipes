@@ -31,12 +31,10 @@ const NavBar = () => {
   return (
     <nav>
       <ul className=" flex flex-col sm:flex-row gap-x-8 font-semibold tracking-wide">
-        {navLinks.map((link, i) =>
-          pathname === link.url ? (
-            <></>
-          ) : (
+        {navLinks.map((link) =>
+          pathname === link.url ? null : (
             <li
-              key={i}
+              key={link.url}
               className="hover:text-taupe hover:underline text-center"
             >
               <Link

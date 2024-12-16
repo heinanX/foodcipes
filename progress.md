@@ -101,6 +101,7 @@ Next, I realized I didn’t want users to be able to navigate to the same page t
 Search form: I have implemented the search form on the dedicated search page. It now fetches data and filters it for a match. If a match is found in any of the titles, ingredients, or tags, the results becomes visible. This solution works for my small-scale app for now, but it may not be optimal for larger-scale applications. In the future, I might exclude ingredients from the search or add criteria that allow users to choose what they want to search through.
 
 **Next up:** add icon to search form. Accessibility message?
+Ingredients List doesnt render the titles if there are more than one set of ingredients, it should check if there are more and then render both sets separately, and if only one set, hide the set title.
 
 ..
 
