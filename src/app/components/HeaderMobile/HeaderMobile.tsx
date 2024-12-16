@@ -1,15 +1,26 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaPlus } from 'react-icons/fa6';
 import NavBar from '../NavBar/NavBar';
+import Separator from '../Separator/Separator';
+import { usePathname } from 'next/navigation';
 
 const HeaderMobile = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [oldParams, setOldParams] = useState(pathname);
 
   const handleDrawer = () => {
     setIsOpen(!isOpen);
     console.log(isOpen);
   };
+
+  useEffect(() => {
+    if (pathname !== oldParams) {
+      setIsOpen(false);
+      setOldParams(pathname);
+    }
+  }, [pathname, oldParams]);
 
   return (
     <header className="sm:hidden flex flex-col absolute top-0 left-0 w-full py-6 px-4 bg-primary justify-between text-rose-ebony">
@@ -20,7 +31,7 @@ const HeaderMobile = () => {
         </a>
         <button
           onClick={handleDrawer}
-          className={` p-0 pb-1
+          className={` p-0 pb-1 text-xl
             ${
               isOpen
                 ? ' rotate-45 transition-transform duration-500'
@@ -33,8 +44,8 @@ const HeaderMobile = () => {
       </div>
       {isOpen ? (
         <>
-          <div className="h-[2px] w-full bg-rose-ebony"></div>
-          <div className="flex justify-center mt-6 font-semibold tracking-wide">
+          <Separator />
+          <div className="flex justify-center mt-6">
             <NavBar />
           </div>
         </>

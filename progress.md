@@ -88,3 +88,10 @@ Did some cleaning up in the files, fixed spelling errors, and added an active st
 
 **Day 9: mobile header**
 I fixed the image size of the recipe cards, and I started on the mobile header. I dont know if I want to link to the search page in the header or if I want to have the search bar for easy and quick use..
+
+..
+
+**Day 9: Header**
+Still unsure how to approach the search bar, I decided to move forward with the nav menu. As it was initially constructed, the menu stayed open when navigating to a link, which wasn’t very user friendly. To fix this, I wrote a useEffect that set the menu's open state to false by comparing the old path with the new path.
+
+Next, I realized I didn’t want users to be able to navigate to the same page they were already on. However, I also wanted to keep NavBar as a server component if possible. This seemed achievable by passing the current pathname variable to the NavBar componet, but I quickly realized that this only worked for the mobile view component. In the end, I made NavBar a client component so I could track the current path and exclude it from being rendered in both mobile and desktop mode.
