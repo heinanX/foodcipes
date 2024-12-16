@@ -1,10 +1,9 @@
 'use client';
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { SyntheticEvent } from 'react';
 
 const SearchForm = () => {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
   const { replace } = useRouter();
 
   const handleForm = (e: SyntheticEvent) => {
@@ -14,11 +13,9 @@ const SearchForm = () => {
     };
 
     const searchValue = target.searchInput.value || '';
-
     const params = new URLSearchParams(searchParams);
     params.set('query', searchValue);
-    // console.log('params  ', params.toString());
-    replace(`${pathname}?${params.toString()}`);
+    replace(`/search/?${params.toString()}`);
   };
 
   return (

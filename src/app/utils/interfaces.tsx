@@ -10,6 +10,23 @@ export interface iRecipeCard {
   ];
 }
 
+export interface iRecipeCardWithTags extends iRecipeCard {
+  tags: [
+    {
+      title: string;
+    }
+  ];
+  set: [
+    {
+      ingredients: [
+        {
+          ingredient: string;
+        }
+      ];
+    }
+  ];
+}
+
 export interface iRecipe {
   _id: string;
   recipeTitle: string;

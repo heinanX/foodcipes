@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import apolloClient from './apolloClient';
-import { iRecipe, iRecipeCard } from './utils/interfaces';
+import { iRecipe, iRecipeCard, iRecipeCardWithTags } from './utils/interfaces';
 const client = apolloClient();
 
 export const getAllRecipes = async (): Promise<iRecipeCard[]> => {
@@ -14,6 +14,35 @@ export const getAllRecipes = async (): Promise<iRecipeCard[]> => {
             asset {
               url
             }
+          }
+        }
+      }
+    `,
+  });
+  return data.allRecipes;
+};
+
+export const getAllRecipesAndTags = async (): Promise<
+  iRecipeCardWithTags[]
+> => {
+  const { data } = await client.query({
+    query: gql`
+      query {
+        allRecipes {
+          _id
+          recipeTitle
+          set {
+            ingredients {
+              ingredient
+            }
+          }
+          images {
+            asset {
+              url
+            }
+          }
+          tags {
+            title
           }
         }
       }
