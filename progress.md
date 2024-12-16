@@ -6,7 +6,7 @@
 - carousel
 - carousel card: div split in two cols, one large image, title description in other and call to action button
 - accessability
-- add a /search page ?
+
 - add package for auto capitalization
 - general styling
 
@@ -15,6 +15,7 @@
 - individual recipe page
 - add url to referred recipe [id] page
 - index filtering
+- add a /search page ?
 
 **Issues**
 
@@ -92,7 +93,15 @@ I fixed the image size of the recipe cards, and I started on the mobile header. 
 
 ..
 
-**Day 9: Header**
+**Day 10: Header and Search form**
 Still unsure how to approach the search bar, I decided to move forward with the nav menu. As it was initially constructed, the menu stayed open when navigating to a link, which wasn’t very user friendly. To fix this, I wrote a useEffect that set the menu's open state to false by comparing the old path with the new path.
 
 Next, I realized I didn’t want users to be able to navigate to the same page they were already on. However, I also wanted to keep NavBar as a server component if possible. This seemed achievable by passing the current pathname variable to the NavBar componet, but I quickly realized that this only worked for the mobile view component. In the end, I made NavBar a client component so I could track the current path and exclude it from being rendered in both mobile and desktop mode.
+
+Search form: I have implemented the search form on the dedicated search page. It now fetches data and filters it for a match. If a match is found in any of the titles, ingredients, or tags, the results becomes visible. This solution works for my small-scale app for now, but it may not be optimal for larger-scale applications. In the future, I might exclude ingredients from the search or add criteria that allow users to choose what they want to search through.
+
+**Next up:** add icon to search form. Accessibility message?
+
+..
+
+**Day 11:**
