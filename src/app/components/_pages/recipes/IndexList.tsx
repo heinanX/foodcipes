@@ -1,5 +1,5 @@
 import { getAllRecipes } from '@/app/actions';
-import RecipeCard from '../../RecipeCard';
+import RecipeCard from '../../RecipeCard/RecipeCard';
 
 const IndexList = async ({ query }: { query: string }) => {
   const recipes = await getAllRecipes();
