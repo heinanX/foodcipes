@@ -30,7 +30,7 @@ const SearchResults = async ({ query }: { query: string }) => {
     <>
       <h4>Search results for:</h4>
       <h2>{query}</h2>
-      <div className="w-full flex flex-wrap gap-10">
+      <div className="w-full flex justify-center flex-wrap gap-10">
         {Array.isArray(recipes) && filteredRecipes.length === 0 && (
           <p>No recipes found</p>
         )}
