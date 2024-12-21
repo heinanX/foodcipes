@@ -1,5 +1,5 @@
 import { getAllRecipes } from './actions';
-import RecipeCard from './components/RecipeCard/RecipeCard';
+import LargeRecipeCard from './components/RecipeCard/LargeRecipeCard';
 import SearchForm from './components/_pages/search/SearchForm/SearchForm';
 import Image from 'next/image';
 import welcomeImage from '../app/utils/assets/cartoon-colored.png';
@@ -26,7 +26,7 @@ export default async function Home() {
         </section>
         <section className="w-full flex flex-row gap-4 justify-center flex-wrap">
           {data.map((recipe) => (
-            <RecipeCard key={recipe._id} recipe={recipe} />
+            <LargeRecipeCard key={recipe._id} recipe={recipe} />
           ))}
         </section>
       </article>
