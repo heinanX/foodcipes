@@ -11,7 +11,7 @@ const IndexList = async ({ query }: { query: string }) => {
     : [];
 
   return (
-    <div className="w-full flex flex-wrap gap-10">
+    <div className="w-full flex flex-wrap gap-10 justify-center">
       {Array.isArray(recipes) && filteredRecipes.length === 0 && (
         <p>No recipes found</p>
       )}
