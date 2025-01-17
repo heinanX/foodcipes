@@ -105,4 +105,5 @@ Ingredients List doesnt render the titles if there are more than one set of ingr
 
 ..
 
-**Day 11:**
+**Day 11:Front page design**
+Did some re-design to the front page and search form. Added revalidation to the data fetch functions.

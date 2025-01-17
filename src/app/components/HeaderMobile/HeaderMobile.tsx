@@ -23,7 +23,7 @@ const HeaderMobile = () => {
   }, [pathname, oldParams]);
 
   return (
-    <header className="sm:hidden flex flex-col absolute top-0 left-0 w-full py-6 px-4 bg-primary justify-between text-rose-ebony">
+    <header className="sm:hidden flex flex-col absolute top-0 left-0 w-full py-6 px-4 bg-secondary justify-between text-primary">
       <div className="flex justify-between w-full mb-2">
         <div></div>
         <a href="/" className="font-bold uppercase tracking-widest text-xl">

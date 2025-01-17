@@ -43,7 +43,7 @@ button {
 }
 
 .primaryBorder {
-  @apply border-b-[1px] border-primary/50;
+  @apply border-b-[1px] border-secondary/50;
 }
 
 @layer utilities {

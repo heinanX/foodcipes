@@ -13,7 +13,7 @@ const IndexButton = ({
     <div>
       <button
         onClick={() => setActive(item)}
-        className={`uppercase hover:text-rose-ebony hover:text-xl hover:border hover:rounded-md hover:bg-primary w-full ${
+        className={`uppercase hover:text-primary hover:text-xl hover:border hover:rounded-md hover:bg-secondary w-full ${
           active === item ? 'text-custGreen' : ''
         }`}
       >

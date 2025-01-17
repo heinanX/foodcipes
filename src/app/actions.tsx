@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import apolloClient from './apolloClient';
 import { iRecipe, iRecipeCard, iRecipeCardWithTags } from './utils/interfaces';
+import { revalidatePath } from 'next/cache';
 const client = apolloClient();
 
 export const getAllRecipes = async (): Promise<iRecipeCard[]> => {
@@ -19,6 +20,8 @@ export const getAllRecipes = async (): Promise<iRecipeCard[]> => {
       }
     `,
   });
+  revalidatePath('/');
+
   return data.allRecipes;
 };
 
@@ -48,6 +51,7 @@ export const getAllRecipesAndTags = async (): Promise<
       }
     `,
   });
+  revalidatePath('/search');
   return data.allRecipes;
 };
 
