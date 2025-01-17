@@ -35,7 +35,7 @@ const NavBar = () => {
           pathname === link.url ? null : (
             <li
               key={link.url}
-              className="hover:text-taupe hover:underline text-center"
+              className="hover:text-secondaryDark hover:underline text-center"
             >
               <Link
                 href={link.url}

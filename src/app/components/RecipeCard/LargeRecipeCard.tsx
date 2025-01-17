@@ -7,7 +7,7 @@ const LargeRecipeCard = ({ recipe }: { recipe: iRecipeCard }) => {
       <section className="relative w-full h-full">
         <RenderImage image={recipe.images} recipeTitle={recipe.recipeTitle} />
         <div className="relative z-10 flex items-end w-full h-full bg-black/0 hover:bg-black/50">
-          <h4 className="text-center w-full bg-rose-ebony/80  py-2 px-1">
+          <h4 className="text-center w-full bg-primary/80  py-2 px-1">
             {recipe.recipeTitle}
           </h4>
         </div>

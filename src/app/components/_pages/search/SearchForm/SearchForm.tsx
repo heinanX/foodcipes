@@ -30,10 +30,10 @@ const SearchForm = () => {
       <input
         type="text"
         id="searchInput"
-        className="py-2 px-1 rounded-full text-rose-ebony outline-none lg:w-full"
+        className="py-2 px-1 rounded-full text-primary outline-none lg:w-full"
         placeholder='"Italian"'
       />
-      <button className="text-rose-ebony py-1 px-5 flex items-center gap-2">
+      <button className="text-primary py-1 px-5 flex items-center gap-2">
         <FaMagnifyingGlass />
       </button>
     </form>
