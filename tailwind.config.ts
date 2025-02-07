@@ -15,7 +15,7 @@ const config: Config = {
         primaryDark: '#241d1d',
         secondary: '#e8d5c0',
         secondaryDark: '#b08267',
-        // primary: '#ddbda4',
+        //og-more-yellow-primary: '#ddbda4',
         custGreen: '#E1DCB6',
         custYellow: '#E9C386',
         custRed: '#BD6060',

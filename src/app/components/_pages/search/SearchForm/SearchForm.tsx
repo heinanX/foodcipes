@@ -22,7 +22,8 @@ const SearchForm = () => {
   return (
     <form
       onSubmit={handleForm}
-      className="space-x-4 flex bg-white rounded-2xl lg:w-96 lg:justify-between"
+      className="space-x-4 flex dark:bg-secondary rounded-2xl lg:w-96 lg:justify-between border-2 border-primary dark:border-none"
+      autoComplete="off"
     >
       <label htmlFor="searchInput" className="sr-only">
         search
@@ -30,7 +31,7 @@ const SearchForm = () => {
       <input
         type="text"
         id="searchInput"
-        className="py-2 px-1 rounded-full text-primary outline-none lg:w-full"
+        className="py-2 px-1 text-primary dark:outline-none  lg:w-full bg-transparent font-semibold"
         placeholder='"Italian"'
       />
       <button className="text-primary py-1 px-5 flex items-center gap-2">

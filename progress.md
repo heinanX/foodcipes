@@ -22,6 +22,7 @@
 - fix "//@ts-expect-error type mismatch", row 66, recipes/[id]/page
 - revalidate data fetching inside actions.tsx
 - remove outline when recipeNavBtns are clicked with mouse?
+- recipe index page, when selecting a letter there is no way to return to view all recipes
 
 **Init Thoughts About Pages:**
 / = holds different categories (carousels) and also a search form.
@@ -107,3 +108,9 @@ Ingredients List doesnt render the titles if there are more than one set of ingr
 
 **Day 11:Front page design**
 Did some re-design to the front page and search form. Added revalidation to the data fetch functions.
+
+..
+
+**Day 12:Front page design**
+Started on Carousel card design and hence solved the Image sixe issue. I set the image to a fixed size, added object cover with a hidden overflow, and added an outer container to contain the size of the card image. this makes it act normally.
+more to follow

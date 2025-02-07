@@ -3,9 +3,17 @@ import LargeRecipeCard from './components/RecipeCard/LargeRecipeCard';
 import SearchForm from './components/_pages/search/SearchForm/SearchForm';
 import Image from 'next/image';
 import welcomeImage from '../app/utils/assets/cartoon-colored.png';
+import CarouselCard from './components/CarouselCard/CarouselCard';
 
 export default async function Home() {
-  const data = await getAllRecipes();
+  const data = (await getAllRecipes()) || [];
+
+  const randomRecipe = () => {
+    const maxNum = data.length || 0;
+    const randomNum = Math.floor(Math.random() * maxNum);
+    return randomNum;
+  };
+  const num = randomRecipe();
 
   return (
     <main className="min-h-screen w-full flex flex-col gap-6 items-center pt-14">
@@ -24,6 +32,7 @@ export default async function Home() {
       <SearchForm />
 
       <article className="w-full flex flex-col gap-4 justify-center flex-wrap pt-14">
+        <CarouselCard recipe={data[num]} />
         <section className="w-full flex flex-row gap-4 justify-center flex-wrap">
           {data.map((recipe) => (
             <LargeRecipeCard key={recipe._id} recipe={recipe} />
